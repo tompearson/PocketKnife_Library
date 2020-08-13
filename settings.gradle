@@ -1,0 +1,9 @@
+include ':Library_getLocationStatus'
+include ':Library_WithPermissions'
+include ':Library_getMACAddress'
+include ':Library_getNetworkStatus'
+include ':Library_map'
+include ':Library_isItRooted'
+include ':Library_getBlueToothStatus'
+//include ':app'
+rootProject.name = "PocketKnifeLibrary"

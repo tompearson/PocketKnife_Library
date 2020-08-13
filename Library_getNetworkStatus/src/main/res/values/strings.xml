@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mobile_connection">\nThe active connection is on </string>
+    <string name="wirelessNetworkName">\nWireless network name: </string>
+    <string name="wifi_connection">\nWifi IP address: </string>
+    <string name="no_wifi_or_mobile">\nNo wireless or mobile connection.</string>
+</resources>

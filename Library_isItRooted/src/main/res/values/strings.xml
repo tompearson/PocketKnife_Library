@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Is it Rooted feature-->
+    <string name="isRooted">\nThis device appears to have been rooted</string>
+    <string name="isNotRooted">\nThis device appears to not have been rooted</string>
+
+</resources>
