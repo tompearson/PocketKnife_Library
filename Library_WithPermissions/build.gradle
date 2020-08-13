@@ -3,8 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion global_compileSdkVersion
+    buildToolsVersion global_buildToolsVersion
 
     defaultConfig {
         minSdkVersion 16
@@ -25,7 +25,7 @@ android {
 }
 repositories {
     maven {
-//        For com.github.quickpermissions:quickpermissions-kotlin:0.4.0
+//        For com.github.quickpermissions:quickpermissions-kotlin:
         url "https://jitpack.io"
     }
 }

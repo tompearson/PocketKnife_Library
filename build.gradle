@@ -28,10 +28,6 @@ project.ext {
     global_compileSdkVersion = 29
     global_buildToolsVersion = "29.0.3"
 }
-repositories {
-    google()
-    jcenter()
-}
 buildscript {
     ext.kotlin_version = "1.3.72"
     repositories {
@@ -41,19 +37,50 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'digital.wup:android-maven-publish:3.6.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
-
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
 allprojects {
+    group = "com.library.tappyplay.pocketknife"
+    version = "1.0.0"
     repositories {
         google()
         jcenter()
     }
+    task hello {
+        // debug task
+        doLast { task ->
+            println "I'm $task.project.name (this is the task.project.name)"
+        }
+    }
+}
+subprojects {
+    apply plugin: "maven-publish"
+    apply plugin: 'digital.wup.android-maven-publish'
+    hello {
+        // debug message
+        doLast { println "Message: Checking in subprojects" }
+    }
+    afterEvaluate { Project project ->
+        publishing {// ./gradlew publishToMavenLocal --info
+            publications {
+                mavenArr(MavenPublication) {
+                    artifactId = "$rootProject.name-$project.name"
+                    // debug message
+                    println "Message: from components.android $rootProject.name-$project.name"
+                    from components.android
+                }
+            }
+        }
+    }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+
+
+

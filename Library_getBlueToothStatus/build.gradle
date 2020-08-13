@@ -2,15 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-def siteUrl = 'https://github.com/tompearson/PocketKnife'      // Homepage URL of the library
-def gitUrl = 'https://github.com/tompearson/PocketKnife.git'   // Git repository URL
-group = "com.github.tompearson"
-// This is the library version used when deploying the artifact
-version = "1.0.1"
-
 android {
     compileSdkVersion global_compileSdkVersion
     buildToolsVersion global_buildToolsVersion
+
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 29
