@@ -24,6 +24,7 @@ ext {
             places                : "com.google.android.libraries.places:places:${versions.places}"
     ]
 }
+apply plugin: 'com.github.dcendents.android-maven'
 project.ext {
     global_compileSdkVersion = 29
     global_buildToolsVersion = "29.0.3"
@@ -38,14 +39,15 @@ buildscript {
         classpath "com.android.tools.build:gradle:4.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'digital.wup:android-maven-publish:3.6.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
 allprojects {
     group = "com.library.tappyplay.pocketknife"
 //    Versioning
@@ -54,6 +56,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
     task hello {
         // debug task
